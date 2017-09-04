@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Template</title>
+</head>
+<body>
+<h1>Introduction</h1>
+A wiki for normal python programming.
+
+<h1>Table of content</h1>
+<ol>
+	<li><a href="#lists">Sample</a></li>
+	<li><a href="#Import_Data">Import Data</a></li>
+	<ol>
+		<li><a href="#Import_Data_CSV">CSV</a></li>
+		<li><a href="#title_22">Title 2-2</a></li>
+		<li><a href="#title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+
+<h1 id="Import_Data">Import Data</h1>
+<h3 id="Import_Data_CSV">CSV</h3>
+<ul>
+	<li><h4>Numpy</h4> 
+	We can use numpy genfromtxt() method to do so, by setting the delimiter kwarg to a comma as below:<br>
+	from numpy import genfromtxt<br>
+my_data = genfromtxt('my_file.csv', delimiter=',')<br>
+Links:<br>
+<a href="https://stackoverflow.com/questions/3518778/how-to-read-csv-into-record-array-in-numpy">How to read csv into record array in numpy?</a><br>
+<a href="https://stackoverflow.com/questions/25614749/how-to-import-csv-file-as-numpy-array-in-python">How to import csv file as numpy.array in python?</a><br>
+</li>
+	<li><h4>Pandas</h4>
+	We can use read_csv() function in pandas for reading csv files as below:<br>
+	data = pd.read_csv("hubble_data.csv")<br>
+data.head()<br>
+	Links:<br>
+	<a href="http://pythonforengineers.com/introduction-to-pandas/">
+Introduction to Pandas with Practical Examples</a><br>
+	<a href="http://pythonhow.com/accessing-dataframe-columns-rows-and-cells/">Accessing pandas dataframe columns, rows, and cells</a><br>
+	<ul>
+		<li>Accessing a column in Pandas:<br>
+		    df2.iloc[0:3,0:4]</li>
+	</ul>
+
+</li>
+</ul>
+
+
+
+
+
+
+This is an ordered list:<br>
+<ol>
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+
+</ol>
+<hr>
+<h1 id="title_2">Second title</h1>
+<h1 id="title_21">Title 2-1</h1>
+<h1 id="title_22">Title 2-2</h1>
+<h1 id="title_23">Title 2-3</h1>
+
+</body>
+</html>
