@@ -10,6 +10,16 @@ This is a wiki for java programming tips.<br>
 <h1>Table of content</h1>
 <ol>
 	<li><a href="#TODO">Tag File Manager To Do</a></li>
+	<li><a href="#files">Work with Files</a></li>
+	<ol>
+		<li><a href="#files_copy">Copy File</li>
+		<li><a href="#files_delete">Delete File</a></li>
+		<li><a href="#files_cut">Cut File</a></li>
+		<li><a href="#files_create">Create File</a></li>
+		<li><a href="#files_read">Read File</a></li>
+		<li><a href="#files_write">Write to File</a></li>
+		<li><a href="#files_fileName_extraction">Extract the File Name</a></li>
+	</ol>
 	<li><a href="#GUI_Eclipse">GUI in Eclipse</a></li>
 	<ol>
 		<li><a href="#GUI_Eclipse_start_project">Start a GUI project</a></li>
@@ -17,6 +27,7 @@ This is a wiki for java programming tips.<br>
 		<li><a href="#GUI_Eclipse_online_examples">Online Examples
 		</a></li>
 	</ol>
+	<li><a href="#console">Work with Console</a></li>
 	<li><a href="#title_2">Second title</a></li>
 	<ol>
 		<li><a href="title_21">Title 2-1</a></li>
@@ -63,11 +74,54 @@ This is a wiki for java programming tips.<br>
 
 
 
+<hr>
+<h1 id="files">Work with Files</h1>
+<h3 id="files_copy">Copy File</h3>
+<a href="http://docs.oracle.com/javase/tutorial/essential/io/copy.html">Java Documentation: Copying a File or Directory</a><br>
 
+File src = new File("original.txt");<br>
+File target = new File("copy.txt");<br>
+<br>
+Files.copy(src.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING);<br>
+
+<h3 id="files_cut">Cut File</h3>
+For cutting a file and directories we use below syntax:<br>
+Files.move(src_path.toPath(), dest_path.toPath(), StandardCopyOption.REPLACE_EXISTING);<br>
+<br>
+Notes:<br>
+- Empty directories can be moved. If the directory is not empty, the move is allowed when the directory can be moved without moving the contents of that directory. On UNIX systems, moving a directory within the same partition generally consists of renaming the directory. In that situation, this method works even when the directory contains files.<br>
+- For destination we should send the address of the destination folder and then split the name of the file and add it to the end of the destination address to create the final destination address.<br>
+
+<h3 id="files_delete">Delete File</h3>
+
+<h3 id="files_create">Create File</h3>
+
+<h3 id="files_read">Read File</h3>
+
+<h3 id="files_write">Write to File</h3>
+
+<h3 id="files_fileName_extraction">Extract the File Name</h3>
+File f = new File("/storage/emulated/0/temp.jpg");<br>
+System.out.println(f.getName());<br>
+<br>
+Note:<br>
+Notice that the first solution is system dependent. It only takes the system's path separator character into account. So if your code runs on a Unix system and receives a Windows path, it won't work.<br>
 
 <hr>
+<h1 id="console">Work with Console</h1>
+<h3>Read from console</h3>
+<ul>
+	<li>Scanner scanner = new Scanner(System.in);<br>
+String username = scanner.nextLine();</li>
+	<li>Scanner sc = new Scanner(System.in);<br>
+int i = sc.nextInt();</li>
+</ul>
+<h3>Write to console</h3>
+<ul>
+	<li>System.out.println("Your username is " + username);</li>
+</ul>
+<hr>
 <h1 id="title_2">Second title</h1>
-<h1 id="title_21">Title 2-1</h1>
 <h1 id="title_22">Title 2-2</h1>
 <h1 id="title_23">Title 2-3</h1>
 
