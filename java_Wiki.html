@@ -9,16 +9,23 @@ This is a wiki for java programming tips.<br>
 
 <h1>Table of content</h1>
 <ol>
-	<li><a href="#TODO">Tag File Manager To Do</a></li>
 	<li><a href="#files">Work with Files</a></li>
 	<ol>
 		<li><a href="#files_copy">Copy File</li>
-		<li><a href="#files_delete">Delete File</a></li>
 		<li><a href="#files_cut">Cut File</a></li>
+		<li><a href="#files_delete">Delete File</a></li>
 		<li><a href="#files_create">Create File</a></li>
 		<li><a href="#files_read">Read File</a></li>
 		<li><a href="#files_write">Write to File</a></li>
 		<li><a href="#files_fileName_extraction">Extract the File Name</a></li>
+	</ol>
+	<li><a href="#folders">Work with Folders</a></li>
+	<ol>
+		<li><a href="#folders_get_content">Get the Contents of a Folder"></a></li>
+		<li><a href="#folders_delete">Delete Folder"</a></li>
+		<li><a href="#folders_cut">Cut Folder"</a></li>
+		<li><a href="#folders_copy">Copy Folder"</a></li>
+		<li><a href="#folders_create">Create Folder"</a></li>
 	</ol>
 	<li><a href="#GUI_Eclipse">GUI in Eclipse</a></li>
 	<ol>
@@ -28,14 +35,6 @@ This is a wiki for java programming tips.<br>
 		</a></li>
 	</ol>
 	<li><a href="#console">Work with Console</a></li>
-	<li><a href="#title_2">Second title</a></li>
-	<ol>
-		<li><a href="title_21">Title 2-1</a></li>
-		<li><a href="title_22">Title 2-2</a></li>
-		<li><a href="title_23">Title 2-3</a></li>
-
-	</ol>
-
 </ol>
 <hr>
 <h1 id="TODO">Tag File Manager To Do</h1>
@@ -93,6 +92,12 @@ Notes:<br>
 - For destination we should send the address of the destination folder and then split the name of the file and add it to the end of the destination address to create the final destination address.<br>
 
 <h3 id="files_delete">Delete File</h3>
+File file_path = new File(file_add);<br>
+Files.delete(file_path.toPath());<br>
+<br>
+Note:<br>
+- With directories, the directory must be empty, or the deletion fails.<br>
+- The "deleteIfExists(Path)" method also deletes the file, but if the file does not exist, no exception is thrown. Failing silently is useful when you have multiple threads deleting files and you don't want to throw an exception just because one thread did so first.
 
 <h3 id="files_create">Create File</h3>
 
@@ -108,6 +113,23 @@ Note:<br>
 Notice that the first solution is system dependent. It only takes the system's path separator character into account. So if your code runs on a Unix system and receives a Windows path, it won't work.<br>
 
 <hr>
+
+
+
+
+
+
+<h1 id="folders">Work with Folders</h1>
+<h3 id="folders_get_content">Get the Contents of a Folder</h3>
+
+<h3 id="folders_delete">Delete Folder</h3>
+<h3 id="folders_cut">Cut Folder</h3>
+<h3 id="folders_copy">Copy Folder</h3>
+<h3 id="folders_create">Create Folder</h3>
+
+
+<hr>
+
 <h1 id="console">Work with Console</h1>
 <h3>Read from console</h3>
 <ul>
