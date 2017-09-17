@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SQL Wiki</title>
+</head>
+<body>
+<h1>Table of content</h1>
+<ol>
+	<li><a href="#CrateDatabase">Crate Database</a></li>
+	<li><a href="#CrateTable">Crate Table</a></li>
+	<li><a href="#BasicSelect">Simple Select</a></li>
+	<li><a href="#Insert">Insert</a></li>
+</ol>
+<hr>
+<h1 id="CrateDatabase">Crate Database</h1>da
+A database can conatain one or many tables. The statement for creating a database is as follow:<br>
+CREATE DATABASE databse_name
+<hr>
+
+<h1 id="CrateTable">Crate Table</h1>
+SQL table is a twodimensional arrayof rows and columns. We can create a table with "CREATE" command as below:<br>
+CREATE TABLE tableName<br>
+(<br>
+column_name_1 data_type,<br>
+column_name_2 data_type,<br>
+column_name_3 data_type<br>
+)<br>
+<h4>Example:</h4><br>
+CREATE TABLE Persons<br>
+(<br>
+P_ID int,<br>
+LAstName varchar(255),<br>
+First_Name varchar(255),<br>
+Address varchar(255),<br>
+City varchar(255)<br>
+)<br>
+<hr>
+
+<h1 id="BasicSelect">Simple Select</h1>
+The simple method for getting a query from a table is SELECT command as below:<br> 
+SELECT column_name(s) FROM table_name<br>
+SELECT * FROM table_name<br>
+<h5>Example:</h5>
+SELECT Last_name, First_name FROM Persons<br>
+<hr>
+
+<h1 id="Insert">Insert</h1>
+<ul>
+	<li>
+		<h5>INSERT:</h5>
+		INSERT INTO table_name VALUES (v1, v2, v3)
+	</li>
+	<li>
+		<h5>INSERT into specefic columns:</h5>
+		INSERT INTO table_name (column_name_1, column_name_2, column_name_3) VALUES (v1, v2, v3)
+		
+	</li>
+</ul>
+<hr>
+
+<h1 id="title_21">Title 2-1</h1>
+
+
+</body>
+</html>

@@ -21,7 +21,7 @@ This is a wiki for java programming tips.<br>
 	</ol>
 	<li><a href="#folders">Work with Folders</a></li>
 	<ol>
-		<li><a href="#folders_get_content">Get the Contents of a Folder"></a></li>
+		<li><a href="#folders_get_content">Get the Contents of a Folder"</a></li>
 		<li><a href="#folders_delete">Delete Folder"</a></li>
 		<li><a href="#folders_cut">Cut Folder"</a></li>
 		<li><a href="#folders_copy">Copy Folder"</a></li>
@@ -121,10 +121,45 @@ Notice that the first solution is system dependent. It only takes the system's p
 
 <h1 id="folders">Work with Folders</h1>
 <h3 id="folders_get_content">Get the Contents of a Folder</h3>
+We can use the below syntax for getting a list of all the contents of a directory including files and other sud-directories.<br>
+File dir_path = new File(dir_add);<br>
+File[] content = dir_path.listFiles();<br>
+for (File file : content) {<br>
+	System.out.println(file);
+	System.out.println(file.getName());
+}<br>
+"file" itself returns the full address of that item such as: /home/ali/workspace/java_tutorial/zzz<br>
+"file.getName()" returns just the name of the file or directory: zzz<br>
+<br>
+Note: Dividing files and directories<br>
+We can divide/categorize files and directories using the "file.isDirectory()" or "file.isFile()" as below:<br>
+for (File file : content) {<br>
+	if (file.isFile()) {<br>
+		System.out.println(file);<br>
+		System.out.println(file.getName());<br>
+	}<br>
+}<br>
+
 
 <h3 id="folders_delete">Delete Folder</h3>
+For deleting a non empty directory we can either write a recursive function or we can use the Apache commonIO and here I used the below syntax from the Apache:<br>
+File dir_path = new File(dir_add);<br>
+FileUtils.deleteDirectory(dir_path);<br>
+<br>
+Note:<br>
+- For using the Apache commonIO we first need to import it and we also need to add its jar file to the eclipse:<br>
+"import org.apache.commons.io.FileUtils;"<br>
+Open the project's properties---> Java Build Path ---> Libraries tab ---> Add External Jars
+<a href="http://commons.apache.org/proper/commons-io/">Link for download the commonIO</a> <br>
+- This method is not working for files and it will produces errors.
 <h3 id="folders_cut">Cut Folder</h3>
+
 <h3 id="folders_copy">Copy Folder</h3>
+Like deleting a non empty directory we can write a recursive function but it is easier to use apache commonIO as below:<br>
+File src_path = new File(src_add);<br>
+String dir_name = src_path.getName();<br>
+File dest_path = new File(dest_add+dir_name);<br>
+FileUtils.copyDirectory(src_path, dest_path);<br>
 <h3 id="folders_create">Create Folder</h3>
 
 
