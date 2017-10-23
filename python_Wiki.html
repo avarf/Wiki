@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML Template</title>
+	<title>Python Wiki</title>
+	<style>p.tab{ padding-left: 1.8em }</style>
 </head>
 <body>
 <h1>Introduction</h1>
@@ -9,21 +10,119 @@ A wiki for normal python programming.
 
 <h1>Table of content</h1>
 <ol>
-	<li><a href="#lists">Sample</a></li>
+	<li><a href="#LoopsFlowControl">Loops and Flow Control</a></li>
+	<li><a href="#DataStructures">Data Structures</a></li>
 	<li><a href="#Import_Data">Import Data</a></li>
+
 	<ol>
 		<li><a href="#Import_Data_CSV">CSV</a></li>
 		<li><a href="#title_22">Title 2-2</a></li>
 		<li><a href="#title_23">Title 2-3</a></li>
 
 	</ol>
+	<li><a href="#SQL">Working With SQL</a></li>
+	<li><a href="#API">Working With API</a></li>
+	<li><a href="#Functions">Functions</a></li>
+	<li><a href="#Lambda">Lambda Functions(Anonymous Function)</a></li>
+	<li><a href="#OOP">Object Oriented Programming(classes)</a></li>
+	<ol>
+		<li><a href="#Class">Class</a></li>
+		<li><a href="#ClassInstance">Class Instance</a></li>
+		<li><a href="#ClassVariable">Class Variable</a></li>
+		<li><a href="#ClassMethod">Class Method</a></li>
+		<li><a href="#StaticMethod">Static Method</a></li>
+		<li><a href="#Inheritance">Inheritance</a></li>
+		<li><a href="#SpecialMethods">Special Methods</a></li>
+		<li><a href="#PropertyDecorator">Property Decorator</a></li>
+
+
+	</ol>
+
+	<li><a href="#Modules">Modules</a></li>
+	<li><a href="#Interview">Interview Questions and Algorithms</a></li>
 
 </ol>
 <hr>
+<h1 id="LoopsFlowControl">Loops and Flow Control</h1>
+<ul>
+	<li><h3>For</h3>
+		my_list = [1, 2, 3]<br>
+		for i in my_list:<br>
+		print(i)<br>
+	</li>
+	<li><h3>Advanced For</h3>
+	my_list = [1, 2, 3]<br>
+	squar = [i*i for i in my_list]<br>
+	print(square)<br>
+	</li>
+	<li><h3>While</h3>
+		i = 0<br>
+		while i < 10:<br>
+		print(i)<br>
+		i = i+1
+	</li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
 
+</ul>
+<hr>
+<h1 id="DataStructures">Data Structures</h1>
+<ul>
+	<li><h3>List:</h3>
+		my_list = [10, 20, 30, 40]<br>
+		for i in my_list:<br>
+		print (i)<br>
+	</li>
+	<li><h3>Tuple:</h3>
+		my_tuple = (1, 2, 3, 4)<br>
+		for i in my_tuple:<br>
+		print (i)<br>
+	</li>
+	<li><h3>Dictionary:</h3>
+		my_dict = {'name': 'Jon', 'age': '20', '65': 'weight'}<br>
+		for key, val in my_dict.iteitem():<br>
+		print("my {} is {}.".format(key, val))<br>
+	</li>
+	<li><h3>Set:</h3>
+		my_set = {10, 20, 30, 40, 50}<br>
+		for i in my_set:<br>
+		print(i)<br>
+	</li>
+</ul>
+<h3>Differences:</h3>
+<ul>
+	<li><h3>List VS Tuple:</h3>
+		<ol>
+			<li>A tuple is immutable whereas a list is mutable</li>
+			<li>Tuples are fixed size in nature whereas lists are dynamic</li>
+			<li>Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is iterate through it, use a tuple instead of a list</li>
+			<li>Some tuples can be used as dictionary keys but lists can never be used as dictionary keys, because lists are not immutable</li>
+			<li>You can't add elements to a tuple. Tuples have no append or extend method</li>
+			<li>You can't remove elements from a tuple. Tuples have no remove or pop method</li>
+			<li>You can find elements in a tuple, since this doesnt change the tuple. You can also use the in operator to check if an element exists in the tuple.</li>
+		</ol>
+	</li>
+</ul>
+<hr>
 <h1 id="Import_Data">Import Data</h1>
 <h3 id="Import_Data_CSV">CSV</h3>
 <ul>
+		<li><h3>Pandas</h3>
+	data = pd.read_csv("hubble_data.csv")<br>
+	data.head()<br>
+	<ul>
+		<li>Accessing a column in Pandas:<br>
+		    df2.iloc[0:3,0:4]</li>
+		<li>print(data.shape)</li>
+		<li>print(type(data.iloc[0,0]))</li>
+		<li>rawdata = np.asarray(data)</li>
+		<li>sample_arr = np.asarray(pfile1.iloc[0,:])</li>
+	</ul>
+	<h5>Links:</h5>
+	<a href="http://pythonforengineers.com/introduction-to-pandas/">
+Introduction to Pandas with Practical Examples</a><br>
+	<a href="http://pythonhow.com/accessing-dataframe-columns-rows-and-cells/">Accessing pandas dataframe columns, rows, and cells</a><br>
+</li>
 	<li><h4>Numpy</h4> 
 	We can use numpy genfromtxt() method to do so, by setting the delimiter kwarg to a comma as below:<br>
 	from numpy import genfromtxt<br>
@@ -32,39 +131,201 @@ Links:<br>
 <a href="https://stackoverflow.com/questions/3518778/how-to-read-csv-into-record-array-in-numpy">How to read csv into record array in numpy?</a><br>
 <a href="https://stackoverflow.com/questions/25614749/how-to-import-csv-file-as-numpy-array-in-python">How to import csv file as numpy.array in python?</a><br>
 </li>
-	<li><h4>Pandas</h4>
-	We can use read_csv() function in pandas for reading csv files as below:<br>
-	data = pd.read_csv("hubble_data.csv")<br>
-data.head()<br>
-	Links:<br>
-	<a href="http://pythonforengineers.com/introduction-to-pandas/">
-Introduction to Pandas with Practical Examples</a><br>
-	<a href="http://pythonhow.com/accessing-dataframe-columns-rows-and-cells/">Accessing pandas dataframe columns, rows, and cells</a><br>
-	<ul>
-		<li>Accessing a column in Pandas:<br>
-		    df2.iloc[0:3,0:4]</li>
-	</ul>
-
-</li>
 </ul>
-
-
-
-
-
-
-This is an ordered list:<br>
-<ol>
-	<li>Item 1</li>
-	<li>Item 2</li>
-	<li>Item 3</li>
-
-</ol>
 <hr>
-<h1 id="title_2">Second title</h1>
-<h1 id="title_21">Title 2-1</h1>
-<h1 id="title_22">Title 2-2</h1>
-<h1 id="title_23">Title 2-3</h1>
+
+<h1 id="SQL">Working With SQL</h1>
+<hr>
+
+<h1 id="API">Working With API</h1>
+<h3>Get information:</h3>
+<h5>Note: we should replace "address" with our desired address.</h5>
+import urllib.parse<br>
+import requests<br>
+<br>
+main_api = 'http://maps.googleapis.com/maps/api/geocode/json?'<br>
+<br>
+address = 'lhr'<br>
+final_url = main_api + urllib.parse.urlencode({'address': address})<br>
+<br>
+api_answer = requests.get(final_url).json()<br>
+print(api_answer)<br>
+<h3>Work with informaion - JSON</h3>
+api_answer = requests.get(final_url).json()<br>
+print(api_answer)<br>
+print(final_url)<br>
+<br>
+formatted_address = api_answer['results'][0]['formatted_address']<br>
+print(formatted_address)<br>
+place_type = api_answer['results'][0]['types'][0]<br>
+print(place_type)<br>
+<hr>
+
+<h1 id="Functions">Functions</h1>
+<h3>Define a Function:</h3><br>
+def my_function(arg1, arg2):<br>
+	"FUNCTION DEFINITION AND RETURN"
+<h3>Argumants:</h3><br>
+<ul>
+	<li>Required arguments:<br>
+		These are normal arguments that we use such as: my_function(arg_1 , arg_2)
+	</li>
+	<li>Default arguments<br>
+		These are arguments with some default values so if we call them without these arguments the function will use the default value: my_function(arg_1, arg_2, age = 50)
+	</li>
+	<li>Variable-length argument:<br>
+		There are situations that we don't know how many arguments we will send to an argument and we have to use this type of arguments and we define them by an "*" before the name of the argument and we work with them like a tuple: my_function(arg_1, arg_2, *var_arg)
+	</li>
+	<li><br></li>
+
+</ul>
+<h3>Pass by reference:</h3><br>
+In python everything is pass by reference which means if we change that argumant in a function it will change globaly. The only thing that we must notice is if we declare a new variable inside the function then that would act as a local variable and the changes wouldn't affect that variable outside the function(Offline python application)
+<h3></h3><br>
+
+<h1 id="Lambda">Lambda Functions(Anonymous Function)</h1>
+lambda [arg1, arg2, ...]: expression<br>
+sum = lambda arg1, arg2: arg1+arg2;<br>
+print(sum(10,20))
+<hr>
+
+<h1 id="Modules">Modules</h1>
+A module allows us to logically organize our python code.(offline python app)
+<hr>
+
+<h1 id="OOP">Object Oriented Programming(classes)</h1>
+	<ul>
+		<li><h3 id="Class">Classes:</h3><br>
+	class Class_Name(Parent_Class):<br>
+	<p class="tab">
+	"""docstring for ClassName"""<br>
+	<br>
+	"class variable"<br>
+	num_of_emps = 0<br>
+	raise_amt = 1.04<br><br>
+	def __init__(self, first, last, pay):<br>
+		"""Constructor method"""<br>
+		"""calling the parent class constructor"""<br>
+		super(ClassName,Parent_Class).__init__()<br>
+		self.first = first<br>
+		self.last = last<br>
+		self.email = first + '.' + last + '@email.com'<br>
+		self.pay = pay<br>
+<br>
+	def print_fullname(self):<br>
+	"Instance Method"<br>
+		return '{} {}'.format(self.first, self.last)
+		</p>
+		
+		</li>
+		<li><h3 id="ClassInstance">Class Instance:</h3><br>
+			emp_1 = Class_Name('ali', 'varfan', 50000)<br>
+			emp_2 = Class_Name('bita', 'varfan', 30000)<br>
+			print(emp_1)<br>
+			print(emp_1.email)
+		</li>
+		<li><h3 id="ClassVariable">Class Variable:</h3><br>
+			For defining a class variable we just need to define the variable outside all the methods such as "num_of_emp" and "raise_amt" here.<br>
+			Class Variables are accessible from all the class's instances and changing them will be applied to all class instances.<br>
+			For accessing them outside the class we do as below:<br>
+			Class_Name.class_variable_name<br>
+			print(Class_Name.raise_amt) 
+		</li>
+		<li><h3 id="ClassMethod">Class Method:</h3><br>
+			<h5>Class method for changing class variables:</h5><br>
+			@classmethod<br>
+    def set_raise_amt(cls, amount):<br>
+cls.raise_amt = amount<br>
+			<h5>Class method as constructor:</h5><br>
+			@classmethod<br>
+    def from_string(cls, emp_str):<br>
+        first, last, pay = emp_str.split('-')<br>
+return cls(first, last, pay)<br>
+		</li>
+		<li><h3 id="StaticMethod">Static Method:</h3><br>
+			@staticmethod<br>
+			def is_workday(day):<br>
+			<p class="tab">
+			if day.weekday() == 5 or day.weekday() == 6:<br>
+            return False<br>
+return True<br></p>
+		</li>
+
+	<li><h2 id="Inheritance">Inheritance</h2>
+		class Child_class(Parent_Class):
+		<p class="tab">
+			    def __init__(self, first, last, pay, employees=None):<br>
+        super().__init__(first, last, pay)<br>
+        if employees is None:<br>
+            self.employees = []<br>
+        else:<br>
+            self.employees = employees<br>
+<br>
+    def add_emp(self, emp):<br>
+        if emp not in self.employees:<br>
+            self.employees.append(emp)<br>
+		</p>
+	</li>
+	<li><h2 id="SpecialMethods">Special Methods</h2>
+		These are methods for changing the normal operators such as "+":<br>
+		def __add__(self, other):<br>
+        return self.pay + other.pay
+	</li>
+	<li><h2 id="PropertyDecorator">Property Decorator:</h2>
+
+		class Employee:
+<p class="tab">
+    def __init__(self, first, last):<br>
+        self.first = first<br>
+        self.last = last<br>
+<br>
+    @property<br>
+    def email(self):<br>
+        return '{}.{}@email.com'.format(self.first, self.last)<br>
+<br>
+    @property<br>
+    def fullname(self):<br>
+        return '{} {}'.format(self.first, self.last)
+</p>
+	</li>
+	<li><h2 id=""></h2></li>
+	<li><h2 id=""></h2></li>
+	<li><h2 id=""></h2></li>
+	<li><h2 id=""></h2></li>
+
+</ul>
+<hr>
+
+<h1 id="Interview">Interview Questions and Algorithms</h1>
+<ul>
+	<li><h3>Fibonacci</h3>
+		a, b = 0, 1<br>
+		for i in xrange(0, 10):<br>
+		print a<br>
+		a, b = b, a+b<br>
+	</li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
+	<li><h3></h3></li>
+
+</ul>
+<hr>
+
+<h1 id="title_23">Title</h1>
+<hr>
+
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+<h1 id="title_23">Title</h1>
+
 
 </body>
 </html>
