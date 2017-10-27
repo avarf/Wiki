@@ -6,7 +6,13 @@
 <body>
 <h1>Table of content</h1>
 <ol>
+	<li><a href="#Resources">Resources</a></li>
+
+	<li><a href="#Resources">Resources</a></li>
 	<li><a href="#Basics">Basics</a></li>
+	<ol>
+		<li><a href="#Basics_definitions">Basic Definitions</a></li>
+	</ol>
 	<li><a href="#SimpleNNet">Simple Neural Network</a></li>
 
 	<li><a href="#title_2">Second title</a></li>
@@ -19,7 +25,35 @@
 
 </ol>
 <hr>
+
+<h1 id="Resources">Resources</h1>
+<ul>
+	<li><a href="http://adventuresinmachinelearning.com/python-tensorflow-tutorial/">Python TensorFlow Tutorial - Build a Neural Network</a></li>
+	<li><a href=""></a></li>
+</ul>
+<hr>
+
 <h1 id="Basics">Basics</h1>
+<h3 id="Basics_definitions">Basic Definitions</h3>
+<ul>
+	<li><h3>Constants:</h3><br>
+		TensorFlow constants can be declared using the tf.constant function:<br>
+		const = tf.constant(2.0, name="const")
+	</li>
+	<li><h3>Variables:</h3><br>
+		TensorFlow variables can be declared using the tf.Variable function:<br>
+		b = tf.Variable(2.0, name='b')<br>
+		<h3>Note:</h3>
+		The first element in both is the value to be assigned the constant / variable when it is initialised.  The second is an optional name string which can be used to label the constant / variable – this is handy for when you want to do visualisations.  TensorFlow will infer the type of the constant / variable from the initialised value, but it can also be set explicitly using the optional dtype argument.  TensorFlow has many of its own types like tf.float32, tf.int32 etc.<br>
+		All the constants, variables, operations and the computational graph are only created when the initialisation commands are run.
+	</li>
+	<li><h3></h3><br></li>
+	<li><h3></h3><br></li>
+	<li><h3></h3><br></li>
+
+</ul>
+
+
 In this part we see how we can define a computation graph.
 This is an ordered list:<br>
 <ol>
