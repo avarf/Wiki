@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask Wiki</title>
+</head>
+<body>
+<h1>Books</h1>
+<ul>
+	<li>Flask By Example -> This book is perfect</li>
+</ul>
+<h1>Table of content</h1>
+<ol>
+	<li><a href="#Start">Start</a></li>
+	<li><a href="#DataFromPython">Data From Python</a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+
+
+	<li><a href="#title_2">Second title</a></li>
+	<ol>
+		<li><a href="title_21">Title 2-1</a></li>
+		<li><a href="title_22">Title 2-2</a></li>
+		<li><a href="title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+<h1 id="Start">Start</h1>
+Run the "app.py". This file acts like a root for all the other things.<br>
+Stop the process: if we need to kill it we use below command:<br>
+fuser -n tcp -k 5000<br>
+<h3> Run Program</h3>
+In terminal:<br>
+python app.py<br>
+Then in the browser we go to localhost and the port that created by above command.<br>
+<h3>Create Rout For The Home</h3>
+@app.route('/')<br>
+def index():<br>
+	return render_template('home.html')<br>
+
+
+
+This is an ordered list:<br>
+<ol>
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+
+</ol>
+<hr>
+<h1 id="DataFromPython">Data From Python</h1>
+<ul>
+	<li>Sharing data from python to html:<br>
+render_template("home.html", articles=feed['entries'])<br>
+	</li>
+	<li>
+		Accessing data in html:<br>
+Our template now has access to the full list of articles that we fetch through the quey and store in feed<br>
+we could now add "{{articles}}" or "{{articles[0]}}" to see a full dump of all the information we're now passing, or just a dump of the first article respectively.
+	</li>
+
+</ul>
+
+<h3>Variables</h3>
+We define variables with double braces:<br>
+{{ hospital }}
+
+<h1 id=""></h1>
+<h1 id=""></h1>
+<h1 id=""></h1>
+<h1 id=""></h1>
+<h1 id=""></h1>
+
+<h1 id="title_2">Second title</h1>
+<h1 id="title_21">Title 2-1</h1>
+<h1 id="title_22">Title 2-2</h1>
+<h1 id="title_23">Title 2-3</h1>
+
+</body>
+</html>

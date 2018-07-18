@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xstream Wiki</title>
+</head>
+<body>
+The XStream programming model borrows heavily from a programming paradigm called 'reactive programming', as popularized by libraries such as Rx. Again, contrary to these existing libraries, where all code runs in a single environment, XStream script code is automatically spread across multiple execution environments. Hence, our slogan "author centrally, deploy distributed".
+
+<h1>Table of content</h1>
+<ol>
+    <li><a href="#EnvSetup">Env Setup</a></li>
+    <li><a href="#Basics">Basics</a></li>
+	<li><a href="#lists">Lists in HTML</a></li>
+	<li><a href="#title_2">Second title</a></li>
+	<ol>
+		<li><a href="title_21">Title 2-1</a></li>
+		<li><a href="title_22">Title 2-2</a></li>
+		<li><a href="title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+
+<h1 id="EnvSetup">Env Setup</h1>
+<b>Installing TypeScript:</b><br>
+npm install -g typescript<br>
+
+<h3>Problems:</h3>
+
+<b>typescript ‘node’: No such file or directory</b><br>
+sudo gedit /usr/local/lib/node_modules/typescript/bin/tsc<br>
+<br>
+--updated the initial Content<br>
+<br>
+#!/usr/bin/env node<br>
+require('./tsc.js')<br>
+<br>
+TO<br>
+<br>
+#!/usr/bin/env nodejs<br>
+require('./tsc.js')<br>
+
+
+<b>Problem</b><br>
+
+<hr>
+
+
+<h1 id="Basics">Basics</h1>
+<b>Flow:</b><br>
+A flow defines a stream processing pipeline where data flows from an arbitrary number of input sources (where the data arrives) to an arbitrary number of output sinks (where the data leaves).<br>
+A unique feature of XStream is that it automatically spreads the execution of operators in the flow across multiple machines.
+
+<b>Flow:</b><br>
+
+
+
+
+
+
+<h1 id="Basics">Basics</h1>
+This is an ordered list:<br>
+<ol>
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+
+</ol>
+<hr>
+<h1 id="title_21">Title 2-1</h1>
+<h1 id="title_22">Title 2-2</h1>
+<h1 id="title_23">Title 2-3</h1>
+
+</body>
+</html>

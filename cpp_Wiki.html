@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C++ Wiki</title>
+</head>
+<body>
+<h1>Table of content</h1>
+<ol>
+	<li><a href="#Compile">Compile a C++ File In Linux</a></li>
+	<li><a href="#cmake">Creating a CMake Package</a></li>
+
+	<li><a href="#title_2">Second title</a></li>
+	<ol>
+		<li><a href="title_21">Title 2-1</a></li>
+		<li><a href="title_22">Title 2-2</a></li>
+		<li><a href="title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+
+
+<h1 id="Compile">Compile a C++ File In Linux</h1>
+For compiling a .cpp file in linux we use:<br>
+
+<b>g++ -std=c++11 [name_of_file.cpp] -o [name_of_output_file]</b><br>
+<br>
+Notes:
+<ul>
+	<li>The file can have as many as dependencies for classes and header files and call them internally and there is no problem.</li>
+	<li>For running the compiled file we run the name of the output file: [name_of_output_file.out] like this from the terminal: ./[name_of_output_file]</li>
+	<li>-std=c++11 defines that this files needs c++ 11 and we can use other versions too</li>
+</ul>
+<hr>
+
+<h1 id="cmake">Creating a CMake Package</h1>
+For Cmake we first need a "CMakeLists.txt".<br>
+<br>
+<b>Video Tutorial:</b><br>
+<a href="https://www.youtube.com/watch?v=elycr5wi9_g">Compiling C++ using CMake and Make</a><br>
+<a href="https://www.youtube.com/watch?v=mwF_PCekNHs">CMake and Unix Linux Tutorial</a><br>
+<br>
+
+<b>Creatign "CMakeLists.txt"</b><br>
+
+<br>
+<b>Running Cmake on a project</b><br>
+<ol>
+	<li>Create a "build" directory inside the directory that "CMakeLists.txt" exists: mkdir build</li>
+	<li>Go to build: cd build</li>
+	<li>Run cmake: cmake ..</li>
+	<li>Run make for creating the executable file/files of our project: make</li>
+	<li>Based on the content of our "CMakeLists.txt" then we run the executable file name in the "CMakeLists.txt": ./[file_address]/[executable_file_name]</li>
+
+</ol>
+
+<hr>
+
+<h1 id="lists">Lists</h1>
+<hr>
+
+<h1 id="lists">Lists</h1>
+<hr>
+
+This is an ordered list:<br>
+<ol>
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+
+</ol>
+<hr>
+<h1 id="title_2">Second title</h1>
+<h1 id="title_21">Title 2-1</h1>
+<h1 id="title_22">Title 2-2</h1>
+<h1 id="title_23">Title 2-3</h1>
+
+</body>
+</html>

@@ -41,7 +41,10 @@ A wiki for normal python programming.
 	</ol>
 
 	<li><a href="#Modules">Modules</a></li>
+
+	<li><a href="#Packaging">Packaging a python application</a></li>
 	<li><a href="#Interview">Interview Questions and Algorithms</a></li>
+	<li><a href="#TDD">Test Drive Development</a></li>
 
 </ol>
 <hr>
@@ -106,6 +109,7 @@ A wiki for normal python programming.
 	</li>
 </ul>
 <hr>
+
 <h1 id="Import_Data">Import Data</h1>
 <h3 id="Import_Data_CSV">CSV</h3>
 <ul>
@@ -135,6 +139,7 @@ Links:<br>
 </li>
 </ul>
 <hr>
+
 
 <h1 id="Files">Working With Files and Folders(Directories)</h1>
 <ul>
@@ -215,9 +220,9 @@ sum = lambda arg1, arg2: arg1+arg2;<br>
 print(sum(10,20))
 <hr>
 
-<h1 id="Modules">Modules</h1>
-A module allows us to logically organize our python code.(offline python app)
-<hr>
+
+
+
 
 <h1 id="OOP">Object Oriented Programming(classes)</h1>
 	<ul>
@@ -322,6 +327,33 @@ return True<br></p>
 </ul>
 <hr>
 
+<h1 id="Modules">Modules</h1>
+A module allows us to logically organize our python code.(offline python app)
+<hr>
+
+<h1 id="Packaging">Packaging a python application</h1>
+For creating a PyPi python package we need to execute two steps:
+1- Add a setup script<br>
+2- Upload to PyPi<br>
+After this anyone can install the package by typing the: "pip install [package-name]"<br>
+<br>
+<b>Add a setup script:</b><br>
+The "setup.py" file is the main component of creating a package and it should contains at least:<br>
+<br>
+<div style="background-color: MediumSeaGreen">
+*** "setup.py" CODE ***<br>
+from setuptools import setup<br>
+<br>
+setup(
+name='[package-name]',  # This is the name of your PyPI-package<br>
+version='[version-number]', # Update the version number for new releases<br>
+scripts=['[python-file-name]'] # The name of your scipt, and also the command you'll be using for calling it<br>
+)<br>
+*** END ***<br>
+</div>
+
+<hr>
+
 <h1 id="Interview">Interview Questions and Algorithms</h1>
 <ul>
 	<li><h3>Fibonacci</h3>
@@ -339,6 +371,33 @@ return True<br></p>
 
 </ul>
 <hr>
+
+
+<h1 id="TDD">Test Drive Development</h1>
+TDD steps:
+<ol>
+	<li>RED: We write the tests and run it and because we haven't implemented the code yet tests will fail.</li>
+	<li>GREEN: We write the code. It doesn't need to be the best implementation it just need to pass the tests.</li>
+	<li>Refactor: After passing the tests we return to the code to see if we can improve it or no.</li>
+	<li>This cycle repeats as we proceed to new features.</li>
+</ol>
+
+<b>TDD versus unit testing versus integration
+testing:</b><br>
+<ul>
+	<li>Unit testing means testing a single unit of code, isolated from other code that it might be integrated with. Usually this is being done by test engineers and it is manual or automated.</li>
+	<li>Integration test is a test that involves exercising more than one unit of the system. The goal is to check whether these units have been integrated correctly. A typical integration test might be to go to a web page, fill in a form, and check whether the right message is displayed on the screen.<br>
+	Integration tests do not pinpoint the location of failure. A failing integration test could have an error in the UI, or in the logic, or somewhere in the way data is read or written</li>
+	<li>TDD is a specific form of developer testing where developers writing the test before starting the implementation.</li>
+</ul>
+
+The simple act of writing a test before the implementation changes the way we think when we implement the corresponding functionality. The resulting code is more testable, usually has a simple and elegant design, and is more maintainable and readable.<br>
+The tests that are written in TDD are those that drive the development forward, and not necessarily those that cover all imaginable scenarios.<br>
+
+
+<hr>
+
+
 
 <h1 id="title_23">Title</h1>
 <hr>

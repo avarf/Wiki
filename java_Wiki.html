@@ -9,6 +9,7 @@ This is a wiki for java programming tips.<br>
 
 <h1>Table of content</h1>
 <ol>
+	<li><a href="#Basics">Basics</a></li>
 	<li><a href="#files">Work with Files</a></li>
 	<ol>
 		<li><a href="#files_copy">Copy File</li>
@@ -35,8 +36,92 @@ This is a wiki for java programming tips.<br>
 		</a></li>
 	</ol>
 	<li><a href="#console">Work with Console</a></li>
+	<li><a href="#oop-classes">OOP and classes</a></li>
+	<ol>
+		<li><a href="#ClassDefinition">Class Definition</a></li>
+	</ol>
 </ol>
 <hr>
+
+<h1 href="Basics">Basics</h1>
+<b>Comments:</b><br>
+Single line: // This is a comment<br>
+Multi line:<br>
+/* This <br>
+* is<br>
+* a multi line<br>
+*/<br>
+<br>
+<b>Data types:</b><br>
+<ul>
+	<li>byte</li>
+	<li>short</li>
+	<li>int</li>
+	<li>long</li>
+	<li>float</li>
+	<li>double</li>
+	<li>boolean</li>
+	<li>char</li>
+</ul>
+<br>
+
+<b>Arrays:</b><br>
+For creating arrays we need to declare the size of array either by populating it or by explicitly writing the size:
+double[] variableName; //declaring variable<br>
+int[] variableName = {1, 2, 3, 4}; <br>
+double[] variableName = new double[10]; //create an empty array of the size 10<br>
+<br>
+Accessing array elements:<br>
+variableName[5] = 12;<br>
+<br>
+
+
+
+
+<br>
+<b>Method:</b><br>
+Syntax:<br>
+<div style="background-color: MediumSeaGreen">
+	public/private [return-type] [methodName]([argumants]){<br>
+	....<br>
+	....<br>
+	}<br>
+
+</div>
+<br>
+
+<b>Access Modifiers:</b><br>
+<ul>
+	<li>No modifier: Visible to the package, the default. No modifiers are needed.</li>
+	<li>Private: Visible to the class only (private).</li>
+	<li>Public: Visible to the world (public).</li>
+	<li>Protected: Visible to the package and all subclasses (protected).</li>
+</ul>
+<br>
+<b>Non-Access Modifiers:</b><br>
+    The static modifier for creating class methods and variables.<br>
+    The final modifier for finalizing the implementations of classes, methods, and variables.<br>
+    The abstract modifier for creating abstract classes and methods.<br>
+    The synchronized and volatile modifiers, which are used for threads.<br>
+<br>
+
+<h3 id="Loops">Loops</h3>
+while(True){...}<br>
+do{...}while(True)<br>
+for(initialization; Boolean_expression; update){...}<br>
+for(declaration : expression){...}<br>
+int[] numbers = {1, 2, 3, 4};<br>
+for(int i: numbers){...}<br>
+
+    
+
+
+
+
+<br>
+<hr>
+
+
 <h1 id="TODO">Tag File Manager To Do</h1>
 <ul>
 	<li>Working with files: copy, cut, delete, rename, open with another software</li>
@@ -178,9 +263,196 @@ int i = sc.nextInt();</li>
 	<li>System.out.println("Your username is " + username);</li>
 </ul>
 <hr>
-<h1 id="title_2">Second title</h1>
-<h1 id="title_22">Title 2-2</h1>
-<h1 id="title_23">Title 2-3</h1>
+
+<h1 id="oop-classes">OOP and classes</h1>
+<h3 id="ClassDefinition">Class Definition</h3>
+<div style="background-color: MediumSeaGreen">
+	[public/private] class [ClassName]{<br>
+	int employeeNumber; // Instance variables<br>
+
+	<br>
+	}<br>
+</div>
+<br>
+
+<h3 id="ClassVariables">Class Variables</h3>
+A class can contain any of the following variable types:
+<ul>
+	<li><b>Local variables:</b><br>
+		Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.
+	</li>
+	<li><b>Instance variables:</b><br>
+		Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
+	</li>
+	<li><b>Class variable:</b><br>
+		Class variables are variables declared within a class, outside any method, with the static keyword.
+	</li>
+</ul>
+
+<b>Instance variable:</b><br>
+<ul>
+	Instance variables are declared in a class, but outside a method, constructor or any block.
+
+    When a space is allocated for an object in the heap, a slot for each instance variable value is created.
+
+    Instance variables are created when an object is created with the use of the keyword 'new' and destroyed when the object is destroyed.
+
+    Instance variables hold values that must be referenced by more than one method, constructor or block, or essential parts of an object's state that must be present throughout the class.
+
+    Instance variables can be declared in class level before or after use.
+
+    Access modifiers can be given for instance variables.
+
+    The instance variables are visible for all methods, constructors and block in the class. Normally, it is recommended to make these variables private (access level). However, visibility for subclasses can be given for these variables with the use of access modifiers.
+
+    Instance variables have default values. For numbers, the default value is 0, for Booleans it is false, and for object references it is null. Values can be assigned during the declaration or within the constructor.
+
+    Instance variables can be accessed directly by calling the variable name inside the class. However, within static methods (when instance variables are given accessibility), they should be called using the fully qualified name. ObjectReference.VariableName.
+
+</ul>
+
+<b>Class/Static variable:</b><br>
+<ul>
+	
+
+    Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.
+
+    There would only be one copy of each class variable per class, regardless of how many objects are created from it.
+
+    Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final, and static. Constant variables never change from their initial value.
+
+    Static variables are stored in the static memory. It is rare to use static variables other than declared final and used as either public or private constants.
+
+    Static variables are created when the program starts and destroyed when the program stops.
+
+    Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.
+
+    Default values are same as instance variables. For numbers, the default value is 0; for Booleans, it is false; and for object references, it is null. Values can be assigned during the declaration or within the constructor. Additionally, values can be assigned in special static initializer blocks.
+
+    Static variables can be accessed by calling with the class name ClassName.VariableName.
+
+    When declaring class variables as public static final, then variable names (constants) are all in upper case. If the static variables are not public and final, the naming syntax is the same as instance and local variables.
+</ul>
+syntax:<br>
+// salary  variable is a private static variable<br>
+private static double salary;<br>
+<br>
+// DEPARTMENT is a constant<br>
+public static final String DEPARTMENT = "Development ";<br>
+<br>
+
+<h3 id="Constructors">Constructors</h3>
+We can have many constructors for each class:
+<div style="background-color: MediumSeaGreen">
+	public class Puppy{<br>
+	String name;<br>
+	int age;<br>
+	<br>
+	public Puppy(){<br>
+	<br>
+	}<br>
+	<br>
+	public Puppy(String name, int age){<br>
+	this.age = age;<br>
+	this.name = name;<br>
+	}<br>
+	<br>
+	}
+	<br>
+</div>
+<br>
+
+
+<h3 id="CreatingAnObject">Creating an object</h3>
+There are three steps when creating an object from a class −
+<ul>
+	<li>
+    	<b>Declaration</b><br>
+    	A variable declaration with a variable name with an object type.
+	</li>
+
+    <li><b>Instantiation</b><br>
+    	The 'new' keyword is used to create the object.
+	</li>
+    <li><b>Initialization</b><br>
+    	The 'new' keyword is followed by a call to a constructor. This call initializes the new object.
+	</li>
+</ul>
+<div style="background-color: MediumSeaGreen">
+	[ClassName] [objectName] = new [ClassName]();<br>
+</div>
+<br>
+<div style="background-color: MediumSeaGreen">
+	public class Puppy{<br>
+	String name;<br>
+	int age;<br>
+	<br>
+	public Puppy(){<br>
+	<br>
+	}<br>
+	<br>
+	public Puppy(String name, int age){<br>
+	this.age = age;<br>
+	this.name = name;<br>
+	}<br>
+	<br>
+	}<br>
+<br>
+	// Following statement would create an object myPuppy<br>
+    Puppy myPuppy = new Puppy( "tommy" );<br>
+	<br>
+</div>
+<br>
+<b>Accessing Instance Variables and Methods:</b><br>
+<div style="background-color: MediumSeaGreen">
+	objectName.variableName;<br>
+	objectName.methodName([Argumants]);<br>
+
+</div>
+
+
+<h3 id=""></h3>
+<div style="background-color: MediumSeaGreen">
+	<br>
+</div>
+<br>
+
+<b>Inheritance:</b><br>
+extends is the keyword used to inherit the properties of a class.
+<div style="background-color: MediumSeaGreen">
+	class Super{<br>
+	...<br>
+	...<br>
+	}<br>
+	<br>
+	class Child extends Super {<br>
+	...<br>
+	...<br>
+	}<br>
+	<br>
+</div>
+<br>
+
+
+<br>
+<b>Interfaces:</b><br>
+An interface can be defined as a contract between objects on how to communicate with each other. An interface defines the methods, a deriving class subclass should use. But the implementation of the methods is totally up to the subclass.<br>
+<br>
+<h1 id="JavaPackageAndSourceFileDeclarationRules">Java Package And Source File Declaration Rules</h1>
+<ul>
+	<li>Package is a way of categorizing the classes and interfaces. When developing applications in Java, hundreds of classes and interfaces will be written, therefore categorizing these classes is a must as well as makes life much easier.</li>
+	<li>There can be only one public class per source file.</li>
+	<li>A source file can have multiple non-public classes.</li>
+	<li>The public class name should be the name of the source file as well which should be appended by .java at the end. For example: the class name is public class Employee{} then the source file should be as Employee.java.</li>
+	<li>If the class is defined inside a package, then the package statement should be the first statement in the source file.</li>
+	<li>If import statements are present, then they must be written between the package statement and the class declaration. If there are no package statements, then the import statement should be the first line in the source file.</li>
+	<li>Import and package statements will imply to all the classes present in the source file. It is not possible to declare different import and/or package statements to different classes in the source file.</li>
+	<li>Classes have several access levels and there are different types of classes; abstract classes, final classes, etc. We will be explaining about all these in the access modifiers chapter.</li>
+	<li></li>
+</ul>
+<hr>
+<h3 id=""></h3>
+<h3 id=""></h3>
 
 </body>
 </html>

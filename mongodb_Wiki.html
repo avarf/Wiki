@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Template</title>
+</head>
+<body>
+<h1>Table of content</h1>
+<ol>
+	<li><a href="#start_mongo">Start and Stop Mongodb</a></li>
+	<li><a href="#query">Query and Finding Data</a></li>
+
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	
+	<li><a href="#title_2">Second title</a></li>
+	<ol>
+		<li><a href="title_21">Title 2-1</a></li>
+		<li><a href="title_22">Title 2-2</a></li>
+		<li><a href="title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+<h1 id="start_mongo">Starting and Stop Mongodb</h1>
+<h3>Start MongoDB</h3><br>
+sudo service mongod start<br>
+<h5>Verify that MongoDB has started successfully:</h5><br>
+Verify that the mongod process has started successfully by checking the contents of the log file at "/var/log/mongodb/mongod.log" for a line reading: "[initandlisten] waiting for connections on port [port].<br>
+where [port] is the port configured in /etc/mongod.conf, 27017 by default.<br>
+<h3>Stop MongoDB</h3>
+sudo service mongod stop<br>
+<h3>Restart MongoDB</h3>
+sudo service mongod restart<br>
+<hr>
+
+
+<h1 id="query">Query and Finding Data</h1>
+<h2>Query for All Documents in a Collection:</h2> 
+db.restaurants.find()<br>
+<h3>Specify Equality Conditions</h3> 
+The query condition for an equality match on a field has the following form:<br>
+{ [field1]: [value1], [field2]: [value2], ... }<br>
+Example: db.restaurants.find( { "city": "Manhattan" } )<br>
+<h3>Query by a Field in an Embedded Document</h3> 
+To specify a condition on a field within an embedded document, use the dot notation. Dot notation requires quotes around the whole dotted field name. The following operation specifies an equality condition on the zipcode field in the address embedded document.<br>
+db.restaurants.find( { "address.zipcode": "10075" } )<br>
+<br>
+<br>
+<h2>Specify Conditions with Operators</h2>
+<h3>Greater Than Operator ($gt)</h3>
+Query for documents whose grades array contains an embedded document with a field score greater than 30.<br>
+db.restaurants.find( { "grades.score": { $gt: 30 } } )<br>
+<br>
+<h3>Less Than Operator ($lt)</h3> 
+db.restaurants.find( { "grades.score": { $lt: 10 } } )<br>
+<br>
+<h3>Logical AND</h3> 
+You can specify a logical conjunction (AND) for a list of query conditions by separating the conditions with a comma in the conditions document.<br>
+db.restaurants.find( { "cuisine": "Italian", "address.zipcode": "10075" } )<br>
+<br>
+<h3>Logical OR ($or)</h3> 
+You can specify a logical disjunction (OR) for a list of query conditions by using the $or query operator.<br>
+db.restaurants.find({ $or: [ { "cuisine": "Italian" }, { "address.zipcode": "10075" } ] })<br>
+<br>
+<h2>Sort Query Results</h2>
+To specify an order for the result set, append the sort() method to the query. Pass to sort() method a document which contains the field(s) to sort by and the corresponding sort type, e.g. 1 for ascending and -1 for descending.<br>
+For example, the following operation returns all documents in the restaurants collection, sorted first by the borough field in ascending order, and then, within each borough, by the "address.zipcode" field in ascending order:<br>
+db.restaurants.find().sort( { "borough": 1, "address.zipcode": 1 } )
+
+<hr>
+This is an ordered list:<br>
+<ol>
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+
+</ol>
+<hr>
+<h1 id="title_2">Second title</h1>
+<h1 id="title_21">Title 2-1</h1>
+<h1 id="title_22">Title 2-2</h1>
+<h1 id="title_23">Title 2-3</h1>
+
+</body>
+</html>
