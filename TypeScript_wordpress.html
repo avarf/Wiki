@@ -1,0 +1,185 @@
+<h1>Basics</h1>
+<h3>Variables:</h3>
+<h5>Defining a Variable:</h5>
+var [variable-name]:[variable-type] = [value];<br>
+Exmaples:<br>
+var myName: string = "ali";<br>
+var myAge: number = 30;<br>
+<h5>Variable types:</h5>
+
+<ul>
+    <li>number:<br>
+        Double precision 64-bit floating point values. It can be used to represent both, integers and fractions.
+    </li>
+    <li>string</li>
+    <li>boolean</li>
+    <li>void</li>
+    <li>null:<br>
+        Represents an intentional absence of an object value.
+    </li>
+    <li>undefined:<br>
+        Denotes value given to all uninitialized variables
+    </li>
+    <li>any:<br>
+        This is the original variable type in JavaSript and if we don't define a variable type or if we expelictly define a variable as any it will be as type any. A variable which defined as any can change its type any where in the code:<br>
+        var testVariable;<br>
+        var testVariable: any;
+        testVariable = 50;
+        testVariable = "Hello"; // No error
+
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+
+</ul>
+<hr>
+
+<h3>Type Assertion:</h3>
+???<br>
+Changing the type of one variable.
+<hr>
+
+<h3>Static and Const:</h3>
+A "static" variables (fields) belongs to the class itself and can be accessed using the class name:<br>
+static sval = 10;<br>
+"const" declarations are another way of declaring variables as their name implies, their value cannot be changed once they are bound:<br>
+const numLivesForCat = 9;
+<hr>
+
+<h3>Conditional Operator (?)</h3>
+The conditional operator is also sometimes referred to as the ternary operator. The syntax is as given below:<br>
+(conditional expression) ? [result-if-true] : [result-if-false];<br>
+EXAMPLE:<br>
+var num:number = -2;<br>
+var result = num > 0 ?"positive":"non-positive";<br>
+<hr>
+
+<h3>"typeof" and "instanceof" operators:</h3>
+var num = 12;<br>
+console.log(typeof num);   //output: number <br>
+<br>
+class Person{ }  <br>
+var obj = new Person();  <br>
+var isPerson = obj instanceof Person;  <br>
+console.log(" obj is an instance of Person " + isPerson); <br>
+<hr>
+
+<h3>Decision Making (if):</h3>
+<h5>if</h5>
+if ([boolean-condition]) {
+    // statements;
+} else if ([boolean-condition-2]) {
+    // statements-2;
+} else {
+    // statements-3;
+}
+
+<h5> switch</h5>
+switch(variable_expression) { 
+   case constant_expr1: { 
+      //statements; 
+      break; 
+   } 
+   case constant_expr2: { 
+      //statements; 
+      break; 
+   } 
+   default: { 
+      //statements; 
+      break; 
+   } 
+}
+
+<h3>Loops:</h3>
+<h5>for:</h5>
+for (initial_count_value; termination-condition; step) {
+   //statements 
+}<br>
+Example:<br>
+for(i = num;i>=1;i--) {
+   factorial *= i;
+}
+<br>
+<h5>for-in:</h5>
+The for...in loop is used to iterate through a list or collection of values. The data type of val here should be string or any. For-in returns te index of that element in that list or tuple:<br>
+for (var val in list) { 
+   //statements 
+}
+<br>
+Example<br>
+
+var j:any; 
+var n:any = "a b c" 
+
+for(j in n) {
+   console.log(n[j])  
+}<br>
+
+OR<br>
+
+var n:any = "a b c" 
+
+for( var j in n) {
+   console.log(n[j])  
+}
+<br>
+
+<h5>for-of:</h5>
+Unlike the for-in loop, for-of returns the actual values of each item in that list or tuple:<br>
+for(var val of n){
+  document.write(val + "<br />");
+}
+
+<h5>while:</h5>
+while([condition]) { 
+   // statements if the condition is true 
+}
+
+<h5>do-while:</h5>
+do {
+   //statements 
+} while([condition])
+
+<h3>The Infinite Loops:</h3>
+for (;;) {[statments]}
+while (true) {[statments]}
+
+<hr>
+
+<h1>Functions</h1>
+<h3>Function definition:</h3>
+<h5>First way</h5>
+function [function-name]([arguments]): [return-type]{
+    // function body
+}
+<br>
+Example:<br>
+function getSum(num1: number, num2: number): number{
+  return num1 + num2;
+}
+
+consol.log(getSum(5, 4));
+
+<h5>Second way</h5>
+var [function-name] = function ([arguments]): [return-type]{
+    // function body
+}
+<br>
+Example:<br>
+var getSum = function(num1: number, num2: number): number{
+  return num1 + num2;
+}
+
+consol.log(getSum(5, 4));
+
+<hr>
+
+<h1></h1>
+
+<hr>
+
+<h1></h1>
+
+<hr>

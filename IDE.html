@@ -41,22 +41,25 @@
 		--Paste JSON/JSON Schema/TypeScript as code<br>
 		<a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype">Paste JSON as Code</a>
 	</li>
-	<li>Snippet:
+	<li><b>Snippet:</b> file -> preferences -> user snippets -> [language-name] -> <br>
 		{
-			// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and 
-			// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-			// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-			// same ids are connected.
-			// Example:
-			// "Print to console": {
-			// 	"prefix": "log",
-			// 	"body": [
-			// 		"console.log('$1');",
-			// 		"$2"
-			// 	],
-			// 	"description": "Log output to console"
-			// }
-		}
+			// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and description.<br>
+			// The prefix is what is used to trigger the snippet and the body will be expanded and inserted. If we have many lines of code we need to write each line as a string item in an array similar to the exmaple but if we have just one line of code then we can just have one string as the value of body.for indentation we can use "\t" for inserting tab into our code.<br> 
+			// Possible variables are:<br>
+			// $1 for the curser position after adding the snippet, we can use this variable in many places in our snippet and as we type the first value of this variable it will fill all the other places in our snippt: const $1 = 55; ... export default $1;<br>
+			// $2 for tab stops,<br>
+			// $0 for the final cursor position,<br>
+			// and ${1:label}, ${2:another} for placeholders. Placeholders with the same ids are connected.<br>
+			// Example:<br>
+			// "Print to console": {<br>
+			// 	"prefix": "log",<br>
+			// 	"body": [<br>
+			// 		"console.log('$1');",<br>
+			// 		"$2"<br>
+			// 	],<br>
+			// 	"description": "Log output to console"<br>
+			// }<br>
+		}<br>
 
 	</li>
 	<li></li>
