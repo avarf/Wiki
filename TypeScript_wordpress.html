@@ -1,4 +1,112 @@
-<h1>Basics</h1>
+<h1>Table of content</h1>
+<ol>
+    <li><a href="#EnvSetup">Env Setup</a></li>
+    <li><a href="#TypeScriptFileSystem">TypeScript File System</a></li>
+    <li><a href="#TypeScriptProjectdistribution">TypeScript Project Distribution</a></li>
+    <li><a href="#TypeScriptBasics">TypeScript Basics</a></li>
+    <li><a href="#TypeScriptFunctions">TypeScript Functions</a></li>
+
+	<li><a href="#lists">Lists in HTML</a></li>
+	<li><a href="#title_2">Second title</a></li>
+	<ol>
+		<li><a href="title_21">Title 2-1</a></li>
+		<li><a href="title_22">Title 2-2</a></li>
+		<li><a href="title_23">Title 2-3</a></li>
+
+	</ol>
+
+</ol>
+<hr>
+
+<h1>To Do</h1>
+- Finish the env setup
+<hr>
+
+<h1 id="EnvSetup">Env Setup</h1>
+
+<a href="https://www.tutorialspoint.com/typescript/typescript_environment_setup.htm">Tutorialspoint Env setup</a><br>
+<b>Installing TypeScript:</b><br>
+1- Installing node: going to its website for instalation<br>
+2- Installing TypeScript:<br>
+$ npm install -g typescript<br>
+3- Checking the instalation and also running the compiler:<br>
+$ tsc [command]<br>
+
+<h3>Problems:</h3>
+
+<b>typescript node: No such file or directory</b><br>
+$ sudo gedit /usr/local/lib/node_modules/typescript/bin/tsc<br>
+<br>
+--updated the initial Content<br>
+<br>
+#!/usr/bin/env node<br>
+require('./tsc.js')<br>
+<br>
+TO<br>
+<br>
+#!/usr/bin/env nodejs<br>
+require('./tsc.js')<br>
+<br>
+
+<b>VSCode cannot find node: /usr/bin/node: No such file or directory</b><br>
+$ sudo apt-get install nodejs-legacy<br>
+<hr>
+
+
+<h1 id="TypeScriptFileSystem">TypeScript File System</h1>
+<h3>Creating TypeScript file:</h3>
+The TypeScript file extension is ".ts": [file-name].ts
+<h3>Compiling TypeScript file:</h3>
+$ tsc [file-name].ts<br>
+This creates a "[file-name].js" file in the same directory and we can use/run that file either in node or browser:
+<h5>Running it in node:</h5>
+$ node [file-name].js
+<hr>
+
+<h1 id="TypeScriptProjectdistribution">TypeScript Project Distribution</h1>
+<a href="https://stackoverflow.com/questions/31169259/how-to-debug-typescript-files-in-visual-studio-code/47215246#47215246">Project Distribution</a>
+The idea is compile the typescript under src folder and place it under bin folder.<br>
+tsconfig.json: It's important to active sourceMap option. <br>
+<br>
+<br>
+<br>
+
+<h3 id="VSCodeTask">VSCode Task</h3>
+For easy developing and preventing of continues compiling of typescript files into JavaSript we can define a task in VSCode and just run it by "ctrl+shift+B" just once at the start of each time we run the VSCode.<br>
+For creating a task we need to follow below steps:
+<ol>
+    <li>Create a TypeScript project: tsc --init</li>
+    <li>Go to VSCode command palet: ctrl+shift+p</li>
+    <li>Type: configure task</li>
+    <li>Choose "TypeScript watch mode" => this creates a "tasks.json" file</li>
+    <li>Copy the below content into that file:
+        {<br>
+            "version": "2.0.0",<br>
+            "tasks": [<br>
+                {<br>
+                    "label": "My Task",<br>
+                    "type": "shell",<br>
+                    "command": "tsc",<br>
+                    "args": [<br>
+                        "-w", "-p", "../typescript_xstream"<br>
+                    ],<br>
+                    "isBackground": true,<br>
+                    "problemMatcher": ["$tsc-watch"]<br>
+                }<br>
+            ]<br>
+        }<br>
+    </li>
+    <li>Run the task by: ctrl+shift+b</li>
+</ol>
+
+
+
+<!-- ------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------- -->
+
+
+<h1 id="TypeScriptBasics">TypeScript Basics</h1>
 <h3>Variables:</h3>
 <h5>Defining a Variable:</h5>
 var [variable-name]:[variable-type] = [value];<br>
@@ -9,11 +117,17 @@ var myAge: number = 30;<br>
 
 <ul>
     <li>number:<br>
-        Double precision 64-bit floating point values. It can be used to represent both, integers and fractions.
+        Double precision 64-bit floating point values. It can be used to represent both, integers and fractions.<br>
+        let myAge: number = 30;
     </li>
-    <li>string</li>
-    <li>boolean</li>
-    <li>void</li>
+    <li>string:<br>
+        let myName: string = "Ali";<br>
+        Template String: if we want to add many strings together it is easier to use template string:<br>
+        let greetings: string = 'Hello ${myName}';
+    </li>
+    <li>boolean:<br>
+        let isAlive: boolean = true;
+    </li>
     <li>null:<br>
         Represents an intentional absence of an object value.
     </li>
@@ -23,12 +137,16 @@ var myAge: number = 30;<br>
     <li>any:<br>
         This is the original variable type in JavaSript and if we don't define a variable type or if we expelictly define a variable as any it will be as type any. A variable which defined as any can change its type any where in the code:<br>
         var testVariable;<br>
-        var testVariable: any;
-        testVariable = 50;
-        testVariable = "Hello"; // No error
+        var testVariable: any;<br>
+        testVariable = 50;<br>
+        testVariable = "Hello"; // No error<br>
 
     </li>
-    <li></li>
+    <li>void</li>
+    <li><b>Arrays</b><br>
+        let ages: number[] = [10,12, 8];<br>
+        let ages2 : Array<number> = [15,16,18];
+    </li>
     <li></li>
     <li></li>
     
@@ -148,7 +266,9 @@ while (true) {[statments]}
 
 <hr>
 
-<h1>Functions</h1>
+
+<!-- ------------------------------------------------------------------------- -->
+<h1 id="TypeScriptFunctions">TypeScript Functions</h1>
 <h3>Function definition:</h3>
 <h5>First way</h5>
 function [function-name]([arguments]): [return-type]{
